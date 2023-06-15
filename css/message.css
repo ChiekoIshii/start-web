@@ -1,0 +1,353 @@
+:root {
+    --main-color: #005F94;
+    --main-bg-color: #fff;
+    --link-color: #349BF4;
+}
+
+/*-----
+ header 
+ -----*/
+body {
+    font-family: "Roboto", "Noto Sans JP", Arial, "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 16px;
+}
+
+header {
+    width: 100%;
+    height: 90px;
+    background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 70px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+.navList {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+a:hover,
+.here {
+    color: var(--main-color);
+}
+
+.hamburgerButton {
+    display: none;
+}
+
+/*-----
+main visual 
+-----*/
+.mainVisual {
+    width: 100%;
+    height: 190px;
+    background-image: url("../img/main_sub_PC.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-top: 90px;
+}
+
+h1 {
+    font-size: 40px;
+    color: var(--main-bg-color);
+}
+
+.mainVisualText {
+    font-size: 24px;
+    color: var(--main-bg-color);
+    text-align: center;
+}
+
+/*-----
+ content 
+ ------*/
+.contentWrap {
+    width: 76%;
+    margin: 69px auto 100px auto;
+}
+
+.messageTitleWrap {
+    margin: 60px 0;
+    text-align: center;
+}
+
+h2 {
+    color: var(--main-color);
+    font-size: 40px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+.messageTitleWrap p {
+    font-size: 18px;
+}
+
+.messageWrap {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.messageWrap img {
+    float: left;
+    margin: 0 25px 25px 0;
+}
+
+.messageWrap p {
+    line-height: 1.8;
+}
+
+.officeImage {
+    width: 100%;
+    margin-top: 80px;
+}
+
+/*-----
+ footer
+ -----*/
+footer {
+    width: 100%;
+    height: 164px;
+    background-color: var(--main-color);
+}
+
+.footerLinkWrap {
+    padding-top: 64px;
+    margin-left: 10%;
+    display: flex;
+    column-gap: 30px;
+}
+
+.footerLinkWrap a {
+    color: var(--main-bg-color);
+}
+
+small {
+    color: var(--main-bg-color);
+    margin-left: 10%;
+}
+
+/*-----
+SP
+-----*/
+@media screen and (max-width: 767px) {
+
+    /*-----
+   header
+   -----*/
+    header {
+        height: 60px;
+        padding: 20px 0 20px 20px;
+    }
+
+    header img {
+        width: 107px;
+    }
+
+    .header {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        width: 180px;
+        height: 100%;
+    }
+
+    .headerNav {
+        position: fixed;
+        top: 0;
+        right: -200px;
+        z-index: 10;
+        width: 200px;
+        height: 100%;
+        background-color: var(--main-color);
+        transition: all .4s;
+        padding: 90px 20px 20px 50px;
+    }
+
+    .show {
+        display: show;
+    }
+
+    .here {
+        color: var(--link-color);
+    }
+
+    .hamburgerButton {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        padding: 21px 16px;
+        border: none;
+        outline: none;
+        background: none;
+        background-color: var(--main-color);
+        cursor: pointer;
+        appearance: none;
+    }
+
+    .hamburgerButton span {
+        display: inline-block;
+        transition: all .4s;
+        position: absolute;
+        left: 16px;
+        height: 2px;
+        border-radius: 2px;
+        background: #fff;
+        width: 28px;
+    }
+
+    .hamburgerButton span:nth-of-type(1) {
+        top: 21px;
+    }
+
+    .hamburgerButton span:nth-of-type(2) {
+        top: 30px;
+    }
+
+    .hamburgerButton span:nth-of-type(3) {
+        top: 38px;
+    }
+
+    /*activeクラスが付与されると線が回転して×に*/
+
+    .hamburgerButton.active span:nth-of-type(1) {
+        top: 21px;
+        left: 18px;
+        transform: translateY(6px) rotate(-45deg);
+        width: 28px;
+    }
+
+    .hamburgerButton.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    .hamburgerButton.active span:nth-of-type(3) {
+        top: 33px;
+        left: 18px;
+        transform: translateY(-6px) rotate(45deg);
+        width: 28px;
+    }
+
+    .navList {
+        display: flex;
+        flex-direction: column;
+        column-gap: 33px;
+    }
+
+    .navList li {
+        width: 100%;
+        font-size: 16xp;
+        color: var(--main-bg-color);
+        margin-top: 33px;
+    }
+
+    .headerNav.active {
+        width: 200px;
+        height: 100%;
+        background-color: var(--main-color);
+        display: block;
+        top: 0;
+        right: 0;
+    }
+
+    /*-----
+   main visual
+   -----*/
+    .mainVisual {
+        height: 160px;
+        background-image: url("../img/main_SP.jpg");
+        margin-top: 60px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .mainVisualText {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    /*-----
+    content 
+    -----*/
+    .contentWrap {
+        width: 90%;
+        margin: 30px auto 50px auto;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .messageTitleWrap {
+        margin: 30px 0 37px 0;
+    }
+
+    .messageTitleWrap p {
+        font-size: 15px;
+    }
+
+    .messageWrap {
+        width: 100%;
+    }
+
+    .messageWrap img {
+        margin: 0 15px 8px 0;
+    }
+
+    .officeImage {
+        height: 260px;
+        object-fit: cover;
+        margin-top: 50px;
+    }
+
+    /*-----
+    footer 
+    -----*/
+    footer {
+        height: 119px;
+    }
+
+    .footerLinkWrap {
+        padding-top: 43px;
+        margin-left: 5%;
+        display: flex;
+        column-gap: 25px;
+    }
+
+    .footerLinkWrap a {
+        color: var(--main-bg-color);
+    }
+
+    small {
+        color: var(--main-bg-color);
+        margin-left: 5%;
+    }
+}
